@@ -1,5 +1,6 @@
 import React from 'react'
 import Appbar from './../shared/Appbar';
+import Footer from './../shared/Footer';
 import Card from '../components/Card';
 
 const AboutPage = () => {
@@ -7,6 +8,7 @@ const AboutPage = () => {
     <div>
       <Appbar/>
       <Card/>
+      <Footer/>
     </div>
   )
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import "../style.css";
+
 
 const HeroSections = () => {
   return (
@@ -13,8 +15,9 @@ const HeroSections = () => {
         </div>
         <div className="grid gap-4 py-8 font-mono font-bold">
           <div className="flex justify-center items-center">
-            <div className="sm:text-5xl text-3xl whitespace-nowrap">
-              Hi, I'm <strong className="gradient-text">Homam</strong>
+            <div className="sm:text-5xl text-3xl whitespace-nowrap flex gap-4">
+              <div>Hi,I'm</div>
+              <span className="gradient-text typing-animation typing-animation-repeating">Homam</span>
             </div>
             <span className="waving-hand">👋</span>
           </div>
