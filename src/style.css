@@ -1,0 +1,21 @@
+/* styles.css */
+.gradient-text {
+    background: linear-gradient(to bottom left, #1E40AF, #A855F7, #60A5FA);
+    -webkit-background-clip: text; /* يحدد كيف يتم عرض الخلفية */
+    -webkit-text-fill-color: transparent; /* يجعل النص شفافًا */
+}
+
+.waving-hand {
+    display: inline-block;
+    font-size: 3rem;
+    animation: wave 1s infinite;
+    will-change: transform; /* Inform the browser about the upcoming changes */
+}
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(15deg); /* تحريك الإيموجي لليمين */
+    }
+}
