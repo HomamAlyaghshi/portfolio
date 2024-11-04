@@ -20,15 +20,15 @@ const HeroSections = () => {
           </div>
           <div className="text-2xl sm:text-left text-center">I'm a Frontend Developer.</div>
           <div className="grid sm:justify-start justify-center">
-            <div className="flex gap-4 items-center">
-              <div className="text-2xl">🌍</div>
+          <div className="flex gap-4 items-center transform transition-transform duration-500 hover:translate-y-[-5px]">
+          <div className="text-2xl">🌍</div>
               <span>Based in Syria</span>
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 items-center transform transition-transform duration-500 hover:translate-y-[-5px]">
               <div className="text-2xl">📧</div>
               <span>homamalyaghshi@gmail.com</span>
             </div>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 items-center transform transition-transform duration-500 hover:translate-y-[-5px]">
               <div className="text-2xl">🖥️</div>
               <span>Open to work</span>
             </div>
