@@ -1,4 +1,5 @@
 import React from "react";
+import { TypeAnimation } from "react-type-animation";
 import "../style.css";
 
 const Card = () => {
@@ -7,19 +8,33 @@ const Card = () => {
       {/**first card */}
       <div className=" grid gap-20 ">
         <div className="mockup-code my-10 mx-60 shadow-2xl shadow-slate-700">
-          <pre className="flex gap-4 typing-animation ">
-            <span className="data-prefix gradient-text">homamalyaghshi $</span>
-            <code>cat aboutHomam</code>
-          </pre>
-          <pre className="flex gap-4 typing-animation  ">
+          <pre className="flex gap-4  ">
             <span className="data-prefix gradient-text">
-              aboutHomam (main) $
+              <TypeAnimation sequence={["homam alyaghshi $"]} speed={50} />
             </span>
-            <code className=" ">
-              Hello! I'm Homam. I'm a front-end intern, studying Computer<br/>
-              Engineering at the University of Damascus. I enjoy teamwork that<br/>
-              enhances my experience, and I believe that creativity is the key<br/>
-              to the success of any work. You should hire me!
+            <code>
+              {" "}
+              <TypeAnimation sequence={["cat aboutHomam"]} speed={50} />
+            </code>
+          </pre>
+          <pre className="flex gap-4   ">
+            <span className="data-prefix gradient-text">
+              <TypeAnimation sequence={["aboutHomam (main) $"]} speed={50} />{" "}
+            </span>
+            <code className="  justify-center items-center">
+              <TypeAnimation
+                sequence={[
+                  "Hello! I'm Homam. I'm a front-end intern, studying Computer Engineering at the University of Damascus. I enjoy teamwork that enhances my experience, and I believe that creativity is the key to the success of any work. You should hire me!",
+                ]}
+                speed={50}
+                wrapper="div"
+                repeat={0}
+                cursor={true}
+                style={{
+                  whiteSpace: "pre-wrap", // يسمح بتقسيم النص تلقائيًا عند نهاية السطر
+                  wordBreak: "break-word", // يكسر الكلمات الطويلة إذا لزم الأمر
+                }}
+              />
             </code>
           </pre>
         </div>
@@ -28,35 +43,65 @@ const Card = () => {
       {/**sec card */}
       <div className=" grid gap-20">
         <div className="mockup-code my-10 mx-60 shadow-2xl shadow-slate-700">
-          <pre className="flex gap-4 typing-animation">
-            <span className="data-prefix gradient-text">homamalyaghshi $</span>
+          <pre className="flex gap-4 ">
+            <span className="data-prefix gradient-text">
+              {" "}
+              <TypeAnimation sequence={["homam alyaghshi $"]} speed={50} />
+            </span>
             <code>cd skills/tools</code>
           </pre>
-          <pre className="flex gap-4 typing-animation ">
+          <pre className="flex gap-4  ">
             <span className="data-prefix gradient-text">
-              aboutHomam (main) $
+              <TypeAnimation sequence={["aboutHomam (main) $"]} speed={50} />{" "}
             </span>
             <code className="whitespace-pre-line">
-            skills/tools (main) $ ls
-            </code  >
-     
+              <TypeAnimation
+                sequence={["skills/tools (main) $ ls"]}
+                speed={50}
+              />{" "}
+            </code>
           </pre>
-          <pre className="flex gap-4 typing-animation ">
-            <span className="data-prefix gradient-text">Proficient With</span>
+          <pre className="flex gap-4  ">
+            <span className="data-prefix gradient-text">
+              <TypeAnimation sequence={["Proficient With"]} speed={50} />{" "}
+            </span>
             <code className="grid grid-cols-2 gap-6">
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">CSS3</span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">HTML5</span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">Java Script</span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">React.js</span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">MaterialUI</span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">DaisyUI</span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">Bootstrap</span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">Tailwind</span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">git</span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">github</span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">c++</span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">python</span>
- 
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["CSS3"]} speed={500} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["HTML5"]} speed={500} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["Java Script"]} speed={500} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["React.js"]} speed={500} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["MaterialUI"]} speed={500} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["DaisyUI"]} speed={500} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["Bootstrap"]} speed={500} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["Tailwind"]} speed={500} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["Git"]} speed={500} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["Github"]} speed={500} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["C++"]} speed={500} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["Python"]} speed={500} />{" "}
+              </span>
             </code>
           </pre>
         </div>
@@ -64,18 +109,31 @@ const Card = () => {
       {/**3 card */}
       <div className=" grid gap-20 ">
         <div className="mockup-code my-10 mx-60 shadow-2xl shadow-slate-700">
-          <pre className="flex gap-4 typing-animation ">
-            <span className="data-prefix gradient-text">homamalyaghshi $</span>
-            <code>cd hobbies/interests</code>
-          </pre>
-          <pre className="flex gap-4 typing-animation ">
+          <pre className="flex gap-4  ">
             <span className="data-prefix gradient-text">
-            hobbies/interests (main) $
+              <TypeAnimation sequence={["aboutHomam (main) $"]} speed={50} />{" "}
+            </span>
+            <code>
+              <TypeAnimation sequence={["cd hobbies/interests"]} speed={50} />{" "}
+            </code>
+          </pre>
+          <pre className="flex gap-4  ">
+            <span className="data-prefix gradient-text">
+              <TypeAnimation
+                sequence={["hobbies/interests (main) $"]}
+                speed={50}
+              />{" "}
             </span>
             <code className="whitespace-pre-line grid grid-cols-2 gap-6">
-            <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">🎥 movies</span>
-            <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">📻 classic music</span>
-            <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">📖 reading</span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["🎥 movies"]} speed={50} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["📻 classic music"]} speed={50} />{" "}
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["📖 reading"]} speed={50} />{" "}
+              </span>
             </code>
           </pre>
         </div>

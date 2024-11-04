@@ -1,6 +1,6 @@
 import React from "react";
 import "../style.css";
-
+import { TypeAnimation } from "react-type-animation";
 
 const HeroSections = () => {
   return (
@@ -17,14 +17,29 @@ const HeroSections = () => {
           <div className="flex justify-center items-center">
             <div className="sm:text-5xl text-3xl whitespace-nowrap flex gap-4">
               <div>Hi,I'm</div>
-              <span className="gradient-text typing-animation typing-animation-repeating">Homam</span>
+              <span className="gradient-text text-5xl text-left w-[300px] justify-center items-center">
+                <TypeAnimation
+                  sequence={[
+                    // Same substring at the start will only be typed out once, initially
+                    "Homam",
+                    1000, // wait 1s before replacing "Mice" with "Hamsters"
+                    "Frontend",
+                    1000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                />
+              </span>
             </div>
             <span className="waving-hand">👋</span>
           </div>
-          <div className="text-2xl sm:text-left text-center">I'm a Frontend Developer.</div>
+          <div className="text-2xl sm:text-left text-center">
+            I'm a Frontend Developer.
+          </div>
           <div className="grid sm:justify-start justify-center">
-          <div className="flex gap-4 items-center transform transition-transform duration-500 hover:translate-y-[-5px]">
-          <div className="text-2xl">🌍</div>
+            <div className="flex gap-4 items-center transform transition-transform duration-500 hover:translate-y-[-5px]">
+              <div className="text-2xl">🌍</div>
               <span>Based in Syria</span>
             </div>
             <div className="flex gap-4 items-center transform transition-transform duration-500 hover:translate-y-[-5px]">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DarkMode from "../components/DarkMode";
 
 const Appbar = () => {
   return (
@@ -17,7 +18,7 @@ const Appbar = () => {
         <Link to={'/projectspage'}>
         <button className="btn btn-ghost text-xl">Projects</button>
         </Link>
-        <button className="btn btn-ghost text-xl">d</button>
+        <button className="btn btn-ghost text-xl"><DarkMode/></button>
       </div>
     </div>
   );
