@@ -13,16 +13,15 @@ const HeroSections = () => {
             className="w-80 h-80 sm:w-60 sm:h-60 bg-mycolor rounded-full shadow-2xl shadow-gray-500"
           />
         </div>
-        <div className="grid gap-4 py-8 font-mono font-bold">
-          <div className="flex justify-center items-center">
-            <div className="sm:text-5xl text-3xl whitespace-nowrap flex gap-4">
+        <div className="grid gap-y-4 py-8 font-mono font-bold ">
+
+          <div className="flex justify-center items-center ">
+            <div className="sm:text-5xl text-3xl whitespace-nowrap flex gap-4 ">
               <div>Hi,I'm</div>
-              <span className="gradient-text text-5xl text-left w-[300px] justify-center items-center">
+              <span className="gradient-text sm:text-5xl text-3xl text-left sm:w-[300px] w-[120px] justify-center items-center">
                 <TypeAnimation
                   sequence={[
-                    // Same substring at the start will only be typed out once, initially
                     "Homam",
-                    1000, // wait 1s before replacing "Mice" with "Hamsters"
                     "Frontend",
                     1000,
                   ]}
@@ -31,8 +30,8 @@ const HeroSections = () => {
                   repeat={Infinity}
                 />
               </span>
-            </div>
-            <span className="waving-hand">👋</span>
+              <span className="waving-hand">👋</span>
+              </div>
           </div>
           <div className="text-2xl sm:text-left text-center">
             I'm a Frontend Developer.

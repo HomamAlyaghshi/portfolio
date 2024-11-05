@@ -4,23 +4,19 @@ import "../style.css";
 
 const Card = () => {
   return (
-    <div className="grid ">
+    <div className="grid w-full h-full ">
       {/**first card */}
-      <div className=" grid gap-20 ">
-        <div className="mockup-code my-10 mx-60 shadow-2xl shadow-slate-700">
-          <pre className="flex gap-4  ">
-            <span className="data-prefix gradient-text">
-              <TypeAnimation sequence={["homam alyaghshi $"]} speed={50} />
-            </span>
+      <div className=" grid gap-20  ">
+        <div className="mockup-code my-10 sm:mx-60 mx-10 shadow-2xl shadow-slate-700 p-5">
+          <pre className="sm:flex grid gap-4  ">
+            <span className="data-prefix gradient-text">homam alyaghshi $</span>
             <code>
-              {" "}
               <TypeAnimation sequence={["cat aboutHomam"]} speed={50} />
             </code>
           </pre>
-          <pre className="flex gap-4   ">
-            <span className="data-prefix gradient-text">
-              <TypeAnimation sequence={["aboutHomam (main) $"]} speed={50} />{" "}
-            </span>
+          <pre className="sm:flex grid gap-4   ">
+            <span className="gradient-text">aboutHomam (main) $</span>
+
             <code className="  justify-center items-center">
               <TypeAnimation
                 sequence={[
@@ -42,65 +38,60 @@ const Card = () => {
 
       {/**sec card */}
       <div className=" grid gap-20">
-        <div className="mockup-code my-10 mx-60 shadow-2xl shadow-slate-700">
-          <pre className="flex gap-4 ">
+        <div className="mockup-code my-10 sm:mx-60 mx-10 shadow-2xl shadow-slate-700 p-5">
+          <pre className="sm:flex grid gap-4 ">
+            <span className="data-prefix gradient-text">homam alyaghshi $</span>
+            <TypeAnimation sequence={["cd skills/tools"]} speed={50} />
+            </pre>
+          <pre className="sm:flex grid gap-4  ">
             <span className="data-prefix gradient-text">
-              {" "}
-              <TypeAnimation sequence={["homam alyaghshi $"]} speed={50} />
-            </span>
-            <code>cd skills/tools</code>
-          </pre>
-          <pre className="flex gap-4  ">
-            <span className="data-prefix gradient-text">
-              <TypeAnimation sequence={["aboutHomam (main) $"]} speed={50} />{" "}
+              aboutHomam (main) $
             </span>
             <code className="whitespace-pre-line">
               <TypeAnimation
                 sequence={["skills/tools (main) $ ls"]}
                 speed={50}
-              />{" "}
+              />
             </code>
           </pre>
-          <pre className="flex gap-4  ">
-            <span className="data-prefix gradient-text">
-              <TypeAnimation sequence={["Proficient With"]} speed={50} />{" "}
-            </span>
+          <pre className="sm:flex grid gap-4  ">
+            <span className="data-prefix gradient-text">Proficient With </span>
             <code className="grid grid-cols-2 gap-6">
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["CSS3"]} speed={500} />{" "}
+                <TypeAnimation sequence={["CSS3"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["HTML5"]} speed={500} />{" "}
+                <TypeAnimation sequence={["HTML5"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Java Script"]} speed={500} />{" "}
+                <TypeAnimation sequence={["Java Script"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["React.js"]} speed={500} />{" "}
+                <TypeAnimation sequence={["React.js"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["MaterialUI"]} speed={500} />{" "}
+                <TypeAnimation sequence={["MaterialUI"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["DaisyUI"]} speed={500} />{" "}
+                <TypeAnimation sequence={["DaisyUI"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Bootstrap"]} speed={500} />{" "}
+                <TypeAnimation sequence={["Bootstrap"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Tailwind"]} speed={500} />{" "}
+                <TypeAnimation sequence={["Tailwind"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Git"]} speed={500} />{" "}
+                <TypeAnimation sequence={["Git"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Github"]} speed={500} />{" "}
+                <TypeAnimation sequence={["Github"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["C++"]} speed={500} />{" "}
+                <TypeAnimation sequence={["C++"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Python"]} speed={500} />{" "}
+                <TypeAnimation sequence={["Python"]} speed={500} />
               </span>
             </code>
           </pre>
@@ -108,31 +99,28 @@ const Card = () => {
       </div>
       {/**3 card */}
       <div className=" grid gap-20 ">
-        <div className="mockup-code my-10 mx-60 shadow-2xl shadow-slate-700">
-          <pre className="flex gap-4  ">
+        <div className="mockup-code my-10 sm:mx-60 mx-10 shadow-2xl shadow-slate-700 p-5">
+          <pre className="sm:flex grid gap-4  ">
             <span className="data-prefix gradient-text">
-              <TypeAnimation sequence={["aboutHomam (main) $"]} speed={50} />{" "}
+              aboutHomam (main) ${" "}
             </span>
             <code>
-              <TypeAnimation sequence={["cd hobbies/interests"]} speed={50} />{" "}
+              <TypeAnimation sequence={["cd hobbies/interests"]} speed={50} />
             </code>
           </pre>
-          <pre className="flex gap-4  ">
+          <pre className="sm:flex grid gap-4  ">
             <span className="data-prefix gradient-text">
-              <TypeAnimation
-                sequence={["hobbies/interests (main) $"]}
-                speed={50}
-              />{" "}
+              hobbies/interests (main) $
             </span>
-            <code className="whitespace-pre-line grid grid-cols-2 gap-6">
+            <code className="whitespace-pre-line grid grid-cols-2 ">
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["🎥 movies"]} speed={50} />{" "}
+                <TypeAnimation sequence={["🎥 movies"]} speed={50} />
+              </span>
+              <span className="transform transition-transform duration-500 whitespace-nowrap hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["📻 classic music"]} speed={50} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["📻 classic music"]} speed={50} />{" "}
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["📖 reading"]} speed={50} />{" "}
+                <TypeAnimation sequence={["📖 reading"]} speed={50} />
               </span>
             </code>
           </pre>
