@@ -16,11 +16,11 @@ const HeroSections = () => {
         <div className="grid gap-y-4 py-8 font-mono font-bold ">
 
           <div className="flex justify-center items-center ">
-            <div className="sm:text-5xl text-3xl whitespace-nowrap flex gap-4 ">
+            <div className="sm:text-5xl text-3xl whitespace-nowrap flex items-center justify-center gap-4 ">
               <div>Hi
               <span className="waving-hand">👋</span>
               ,I'm</div>
-              <span className="gradient-text sm:text-5xl text-3xl text-left sm:w-[230px] w-[120px] justify-center items-center">
+              <span className="gradient-text sm:text-5xl text-3xl text-left sm:w-[230px] w-[150px] justify-center items-center">
                 <TypeAnimation
                   sequence={[
                     "Homam",
