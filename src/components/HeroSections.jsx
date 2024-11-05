@@ -17,20 +17,22 @@ const HeroSections = () => {
 
           <div className="flex justify-center items-center ">
             <div className="sm:text-5xl text-3xl whitespace-nowrap flex gap-4 ">
-              <div>Hi,I'm</div>
-              <span className="gradient-text sm:text-5xl text-3xl text-left sm:w-[300px] w-[120px] justify-center items-center">
+              <div>Hi
+              <span className="waving-hand">👋</span>
+              ,I'm</div>
+              <span className="gradient-text sm:text-5xl text-3xl text-left sm:w-[230px] w-[120px] justify-center items-center">
                 <TypeAnimation
                   sequence={[
                     "Homam",
-                    "Frontend",
                     1000,
+                    "Frontend",
+                  1000,
                   ]}
                   wrapper="span"
                   speed={50}
                   repeat={Infinity}
                 />
               </span>
-              <span className="waving-hand">👋</span>
               </div>
           </div>
           <div className="text-2xl sm:text-left text-center">
