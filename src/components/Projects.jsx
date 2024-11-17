@@ -42,7 +42,6 @@ const Projects = () => {
       liveUrl:"https://first-nuxt-project-ivory.vercel.app/",
       sourceUrl: "https://gitlab.com/homamalyaghshi/first-nu-project",
       logo: <img alt="#" src="/images/nuxt.png" className="w-10 h-8 rounded-full " />
-
     }
     
   ]);
