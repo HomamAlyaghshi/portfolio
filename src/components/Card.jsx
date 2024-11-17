@@ -76,6 +76,12 @@ const Card = () => {
                 <TypeAnimation sequence={["DaisyUI"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["Vue3.js"]} speed={500} />
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["Nuxt.js"]} speed={500} />
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
                 <TypeAnimation sequence={["Bootstrap"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
