@@ -59,6 +59,14 @@ const Projects = () => {
       logo: <img alt="#" src="/images/nuxt.png" className="w-10 h-8 rounded-full" />,
       completed: false,
     },
+        {
+      name: "Hotel Dashbolard",
+      image: "/images/project8.png",
+      liveUrl: "https://hotel-dashboard-peach.vercel.app/",
+      sourceUrl: "#",
+      logo: <FaReact className="w-8 h-8 text-blue-500" />,
+      completed: true,
+    },
   ]);
 
   return (
