@@ -67,6 +67,13 @@ const Projects = () => {
       logo: <FaReact className="w-8 h-8 text-blue-500" />,
       completed: true,
     },
+          {
+      name: "Alemad Charity",
+      image: "/images/project9.png",
+      liveUrl: "https://alemadcharity.org/",
+      sourceUrl: "#",
+      completed: true,
+    },
   ]);
 
   return (
