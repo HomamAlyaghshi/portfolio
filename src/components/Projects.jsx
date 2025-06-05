@@ -54,7 +54,8 @@ const Projects = () => {
     {
       name: "My graduation project",
       image: "/images/project6.png",
-      liveUrl: "https://my-graduation-project-one.vercel.app/",
+      //liveUrl: "https://my-graduation-project-one.vercel.app/",
+          liveUrl:'#',
       sourceUrl: "#",
       logo: <FaReact className="w-8 h-8 text-blue-500" />,
       completed: false,
@@ -62,7 +63,8 @@ const Projects = () => {
     {
       name: "tamayoz LMS",
       image: "/images/project7.png",
-      liveUrl: "https://tamayozlms.vercel.app/",
+    //  liveUrl: "https://tamayozlms.vercel.app/",
+    liveUrl:'#',
       sourceUrl: "#",
       logo: <img alt="#" src="/images/nuxt.png" className="w-10 h-8 rounded-full" />,
       completed: false,
