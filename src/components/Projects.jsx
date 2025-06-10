@@ -44,7 +44,7 @@ const Projects = () => {
       completed: true,
     },
     {
-  name: "Hotel Dashbolard",
+  name: "Hotel Dashboard",
   image: "/images/project8.png",
   liveUrl: "https://hotel-dashboard-peach.vercel.app/",
   sourceUrl: "#",
@@ -76,6 +76,30 @@ const Projects = () => {
       sourceUrl: "#",
       completed: true,
     },
+        {
+  name: "Clinic Dashboard",
+  image: "/images/project10.png",
+  liveUrl: "https://clinic-management-system-sehu.vercel.app/",
+  sourceUrl: "#",
+  logo: <FaReact className="w-8 h-8 text-blue-500" />,
+  completed: true,
+},
+       {
+  name: "Dashboard",
+  image: "/images/project11.png",
+  liveUrl: "https://dashboard-lovat-beta.vercel.app/",
+  sourceUrl: "#",
+  logo: <FaReact className="w-8 h-8 text-blue-500" />,
+  completed: true,
+},
+       {
+  name: "What to read",
+  image: "/images/project12.png",
+  liveUrl: "https://what-to-read-two.vercel.app/",
+  sourceUrl: "#",
+  logo: <FaReact className="w-8 h-8 text-blue-500" />,
+  completed: true,
+},
   ]);
 
   return (
