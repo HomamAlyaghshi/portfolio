@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for the burger menu
+import { FaBars, FaTimes } from "react-icons/fa"; 
 
 const Appbar = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");

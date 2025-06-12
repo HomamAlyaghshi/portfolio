@@ -1,60 +1,79 @@
 import React from "react";
-import "../style.css";
+import "../style.css"; // تأكد من أن هذا الملف يحتوي على كلاسات waving-hand و gradient-text
 import { TypeAnimation } from "react-type-animation";
+import { FaFileDownload } from 'react-icons/fa';
 
 const HeroSections = () => {
   return (
-    <div className="flex justify-center items-center sm:h-[400px] h-full w-full">
-      <div className="sm:flex grid gap-10 items-center text-center ">
-        <div className="flex justify-center">
-          <img
-            alt="my pic"
-            src="/images/withoutback.png"
-            className="w-80 h-80 sm:w-60 sm:h-60 bg-mycolor rounded-full shadow-2xl shadow-gray-500"
-          />
-        </div>
-        <div className="grid gap-y-4 py-8 font-mono font-bold ">
+    // استخدام padding عمودي بدلاً من ارتفاع ثابت، وتحسين التخطيط
+    // تقليل الـ padding الأفقي على الشاشات الصغيرة لجعل المحتوى يملأ الشاشة بشكل أفضل
+    <section className="hero container mx-auto py-16 sm:py-24 px-4 sm:px-6 lg:px-8"> 
+      {/* تقليل الـ gap على الشاشات الصغيرة (افتراضي) ثم زيادته على الشاشات الكبيرة */}
+      <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-10 items-center">
+        
+        {/* --- قسم النصوص والمعلومات --- */}
+        {/* سيظهر أولاً في الشاشات الكبيرة، وعلى الموبايل سيظهر أولاً (بشكل افتراضي مع grid-cols-1) */}
+        <div className="sm:col-span-7 text-center sm:text-left">
+          {/* التحكم في حجم الخط ليتناسب مع الموبايل بشكل جيد */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold whitespace-nowrap mb-4">
+            <span className="waving-hand text-4xl sm:text-5xl">👋</span> Hi, I'm{" "}
+            <span className="gradient-text">
+              <TypeAnimation
+                sequence={["Homam", 2000, "a Developer", 2000]}
+                wrapper="span"
+                speed={30}
+                repeat={Infinity}
+              />
+            </span>
+          </h1>
 
-          <div className="flex justify-center items-center ">
-            <div className="sm:text-5xl text-3xl whitespace-nowrap flex items-center justify-center gap-4 ">
-              <div>Hi
-              <span className="waving-hand">👋</span>
-              ,I'm</div>
-              <span className="gradient-text sm:text-5xl text-3xl text-left sm:w-[230px] w-[150px] justify-center items-center">
-                <TypeAnimation
-                  sequence={[
-                    "Homam",
-                    1000,
-                    "Frontend",
-                  1000,
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  repeat={Infinity}
-                />
-              </span>
-              </div>
+          {/* حجم الخط للنص الوصفي على الموبايل */}
+          <p className="text-lg sm:text-2xl text-base-content/80 mb-8">
+            I build dynamic and responsive web applications from Syria. 
+            Open to new opportunities worldwide. 🌍
+          </p>
+          
+          {/* --- أزرار الدعوة لاتخاذ إجراء (CTA) --- */}
+          {/* التأكد من أن الأزرار تظهر بشكل مكدس على الموبايل ومرتبة أفقيًا على الشاشات الأكبر */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center sm:justify-start">
+            <a href="/projectspage" className="btn btn-primary w-full sm:w-auto rounded-md">
+              View My Projects
+            </a>
+            <a href="/Homam_Alyaghshi_React_CV.pdf" download className="btn btn-outline w-full sm:w-auto rounded-md">
+              <FaFileDownload className="mr-2"/>
+              Download CV
+            </a>
           </div>
-          <div className="text-2xl sm:text-left text-center">
-            I'm a Frontend Developer.
-          </div>
-          <div className="grid sm:justify-start justify-center">
-            <div className="flex gap-4 items-center transform transition-transform duration-500 hover:translate-y-[-5px]">
-              <div className="text-2xl">🌍</div>
-              <span>Based in Syria</span>
+
+          {/* معلومات الاتصال بطريقة أنظف */}
+            <div className="mt-8 text-center sm:text-left">
+              <a 
+                href="mailto:homamalyaghshi@gmail.com" 
+                className="text-base-content/70 hover:text-primary transition-colors duration-300"
+              >
+                homamalyaghshi@gmail.com
+              </a>
             </div>
-            <div className="flex gap-4 items-center transform transition-transform duration-500 hover:translate-y-[-5px]">
-              <div className="text-2xl">📧</div>
-              <span>homamalyaghshi@gmail.com</span>
-            </div>
-            <div className="flex gap-4 items-center transform transition-transform duration-500 hover:translate-y-[-5px]">
-              <div className="text-2xl">🖥️</div>
-              <span>Open to work</span>
-            </div>
+
+        </div>
+
+        {/* --- قسم الصورة الشخصية --- */}
+        {/* تم عكس ترتيبه مع النصوص في الشاشات الكبيرة، لكنه سيأتي بعد النصوص على الموبايل */}
+        <div className="sm:col-span-5 flex justify-center sm:justify-end">
+          {/* الحفاظ على حجم الصورة على الموبايل مع إمكانية إضافة max-width لمنع الكبر الزائد */}
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 max-w-full">
+            {/* تأثير التوهج (glow effect) */}
+            <div className="absolute inset-0 bg-primary rounded-full blur-2xl opacity-40"></div>
+            <img
+            alt="صورة شخصية لهمام"
+            src="/images/withoutback.png"
+              className="relative w-full h-full object-cover bg-mycolor rounded-full shadow-2xl transition-transform duration-300 hover:scale-105"
+            />
           </div>
         </div>
+        
       </div>
-    </div>
+    </section>
   );
 };
 
