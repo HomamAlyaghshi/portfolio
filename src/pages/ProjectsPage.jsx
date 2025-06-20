@@ -5,7 +5,7 @@ import Projects from '../components/Projects'
 
 const ProjectsPage = () => {
   return (
-    <div>
+    <div className='bg-gray-900'>
         <Appbar/>
         <Projects/>
         

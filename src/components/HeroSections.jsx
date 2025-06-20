@@ -7,7 +7,7 @@ const HeroSections = () => {
   return (
     // استخدام padding عمودي بدلاً من ارتفاع ثابت، وتحسين التخطيط
     // تقليل الـ padding الأفقي على الشاشات الصغيرة لجعل المحتوى يملأ الشاشة بشكل أفضل
-    <section className="hero container mx-auto py-16 sm:py-24 px-4 sm:px-6 lg:px-8"> 
+    <section className="hero container mx-auto pt-8 sm:pt-12 px-4 sm:px-6 lg:px-8"> 
       {/* تقليل الـ gap على الشاشات الصغيرة (افتراضي) ثم زيادته على الشاشات الكبيرة */}
       <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-10 items-center">
         
