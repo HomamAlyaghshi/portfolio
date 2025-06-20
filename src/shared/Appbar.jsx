@@ -39,7 +39,7 @@ const Appbar = () => {
   ];
 
   return (
-    <nav className="navbar bg-gray-900 w-full shadow-md z-50 relative"> {/* Added shadow and z-index */}
+    <nav className="navbar w-full shadow-md z-50 relative"> {/* Added shadow and z-index */}
       <div className="flex justify-between items-center w-full px-4 sm:px-8 lg:px-28 py-2"> {/* Improved padding */}
 
         {/* Logo/Brand Name */}

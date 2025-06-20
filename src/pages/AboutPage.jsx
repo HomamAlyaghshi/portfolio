@@ -5,7 +5,7 @@ import Card from '../components/Card';
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className=''>
       <Appbar/>
       <Card/>
       <Footer/>

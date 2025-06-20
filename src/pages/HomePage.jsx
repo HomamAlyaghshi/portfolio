@@ -6,7 +6,7 @@ import Footer from "../shared/Footer";
 import Appbar from "../shared/Appbar";
 const HomePage = () => {
   return (
-    <div className="h-full">
+    <div className="h-full ">
       <Appbar />
       <HeroSections />
       <SocialMedia />

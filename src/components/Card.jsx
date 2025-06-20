@@ -1,139 +1,124 @@
-import React from "react";
-import { TypeAnimation } from "react-type-animation";
-import "../style.css";
+import React, { useState } from "react";
+import "../style.css"; // تأكد من وجود تعريف الـ gradient-text هنا
 
-const Card = () => {
+const ModernTabsCard = () => {
+  const [activeTab, setActiveTab] = useState("about"); // التبويب النشط
+
+  // دالة لعرض المحتوى بناءً على التبويب النشط
+  const renderTabContent = () => {
+    // استخدم 'key' لتوليد المحتوى عند كل تغيير تبويب، مما يسمح للرسوم المتحركة بالعمل
+    return (
+      <div key={activeTab} className="transition-all duration-500 ease-in-out transform opacity-100 scale-100">
+        {activeTab === "about" && (
+          <div className="p-6 md:p-8">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 gradient-text">
+              About Homam
+            </h2>
+            <p className="text-lg text-base-content leading-relaxed">
+              Hello! I'm Homam. I'm a front-end, studying Computer Engineering at the University of Damascus. I enjoy teamwork that enhances my experience, and I believe that creativity is the key to the success of any work. You should hire me!
+            </p>
+          </div>
+        )}
+
+        {activeTab === "skills" && (
+          <div className="p-6 md:p-8">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-6 gradient-text">
+              Skills & Tools
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-4 text-base-content text-lg">
+              {[
+                "CSS3", "HTML5", "JavaScript", "React.js", "Next.js", "MaterialUI",
+                "DaisyUI", "Vue3.js", "Nuxt.js", "Tailwind CSS", "Git", "Github",
+                "C++", "Python"
+              ].map((skill, index) => (
+                <span
+                  key={index}
+                  className="px-4 py-2 bg-base-300 rounded-lg shadow-md text-center
+                             transition-all duration-300 ease-in-out
+                             hover:bg-primary hover:text-primary-content hover:scale-105 transform cursor-pointer"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === "hobbies" && (
+          <div className="p-6 md:p-8">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-6 gradient-text">
+              Hobbies & Interests
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-base-content text-lg">
+              {[
+                "🎥 Watching Movies", "📻 Classic Music", "📖 Reading Books", "🎮 Gaming", "🚶‍♂️ Hiking"
+              ].map((hobby, index) => (
+                <span
+                  key={index}
+                  className="px-4 py-2 bg-base-300 rounded-lg shadow-md text-center
+                             transition-all duration-300 ease-in-out
+                             hover:bg-accent hover:text-accent-content hover:scale-105 transform cursor-pointer"
+                >
+                  {hobby}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
-    <div className="grid w-full h-full ">
-      {/**first card */}
-      <div className=" grid gap-20  ">
-        <div className="mockup-code my-10 sm:mx-60 mx-10 shadow-2xl shadow-slate-700 p-5">
-          <pre className="sm:flex grid gap-4  ">
-            <span className="data-prefix gradient-text">homam alyaghshi $</span>
-            <code>
-              <TypeAnimation sequence={["cat aboutHomam"]} speed={50} />
-            </code>
-          </pre>
-          <pre className="sm:flex grid gap-4   ">
-            <span className="gradient-text">aboutHomam (main) $</span>
-
-            <code className="  justify-center items-center">
-              <TypeAnimation
-                sequence={[
-                  "Hello! I'm Homam. I'm a front-end intern, studying Computer Engineering at the University of Damascus. I enjoy teamwork that enhances my experience, and I believe that creativity is the key to the success of any work. You should hire me!",
-                ]}
-                speed={50}
-                wrapper="div"
-                repeat={0}
-                cursor={true}
-                style={{
-                  whiteSpace: "pre-wrap", // يسمح بتقسيم النص تلقائيًا عند نهاية السطر
-                  wordBreak: "break-word", // يكسر الكلمات الطويلة إذا لزم الأمر
-                }}
-              />
-            </code>
-          </pre>
+    <div className="flex justify-center items-center min-h-screen p-4 md:p-8 bg-gradient-to-br from-base-300 to-base-100">
+      {/* الحاوية الرئيسية للكارد - تصميم أنيق وعصري */}
+      <div className="w-full max-w-4xl bg-base-200 rounded-2xl shadow-2xl overflow-hidden
+                      border border-base-content/10 transform hover:scale-[1.01] transition-transform duration-300 ease-in-out">
+        
+        {/* شريط التبويبات العلوي - تصميم عصري ومنفصل */}
+        <div className="flex flex-col sm:flex-row justify-center bg-base-300 p-3 md:p-4 border-b border-base-content/20 gap-2">
+          <button
+            className={`flex-1 px-6 py-3 rounded-xl text-lg font-semibold
+                        transition-all duration-300 ease-in-out
+                        ${activeTab === "about"
+                          ? "bg-gradient-to-r from-primary to-secondary text-primary-content shadow-lg shadow-primary/30"
+                          : "bg-base-100 text-base-content hover:bg-base-content/10"
+                        }`}
+            onClick={() => setActiveTab("about")}
+          >
+            About Me
+          </button>
+          <button
+            className={`flex-1 px-6 py-3 rounded-xl text-lg font-semibold
+                        transition-all duration-300 ease-in-out
+                        ${activeTab === "skills"
+                          ? "bg-gradient-to-r from-secondary to-accent text-secondary-content shadow-lg shadow-secondary/30"
+                          : "bg-base-100 text-base-content hover:bg-base-content/10"
+                        }`}
+            onClick={() => setActiveTab("skills")}
+          >
+            Skills & Tools
+          </button>
+          <button
+            className={`flex-1 px-6 py-3 rounded-xl text-lg font-semibold
+                        transition-all duration-300 ease-in-out
+                        ${activeTab === "hobbies"
+                          ? "bg-gradient-to-r from-accent to-info text-accent-content shadow-lg shadow-accent/30"
+                          : "bg-base-100 text-base-content hover:bg-base-content/10"
+                        }`}
+            onClick={() => setActiveTab("hobbies")}
+          >
+            Hobbies
+          </button>
         </div>
-      </div>
 
-      {/**sec card */}
-      <div className=" grid gap-20">
-        <div className="mockup-code my-10 sm:mx-60 mx-10 shadow-2xl shadow-slate-700 p-5">
-          <pre className="sm:flex grid gap-4 ">
-            <span className="data-prefix gradient-text">homam alyaghshi $</span>
-            <TypeAnimation sequence={["cd skills/tools"]} speed={50} />
-            </pre>
-          <pre className="sm:flex grid gap-4  ">
-            <span className="data-prefix gradient-text">
-              aboutHomam (main) $
-            </span>
-            <code className="whitespace-pre-line">
-              <TypeAnimation
-                sequence={["skills/tools (main) $ ls"]}
-                speed={50}
-              />
-            </code>
-          </pre>
-          <pre className="sm:flex grid gap-4  ">
-            <span className="data-prefix gradient-text">Proficient With </span>
-            <code className="grid grid-cols-2 gap-6">
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["CSS3"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["HTML5"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Java Script"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["React.js"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Next.js"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["MaterialUI"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["DaisyUI"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Vue3.js"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Nuxt.js"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Tailwind"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Git"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Github"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["C++"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Python"]} speed={500} />
-              </span>
-            </code>
-          </pre>
-        </div>
-      </div>
-      {/**3 card */}
-      <div className=" grid gap-20 ">
-        <div className="mockup-code my-10 sm:mx-60 mx-10 shadow-2xl shadow-slate-700 p-5">
-          <pre className="sm:flex grid gap-4  ">
-            <span className="data-prefix gradient-text">
-              aboutHomam (main) ${" "}
-            </span>
-            <code>
-              <TypeAnimation sequence={["cd hobbies/interests"]} speed={50} />
-            </code>
-          </pre>
-          <pre className="sm:flex grid gap-4  ">
-            <span className="data-prefix gradient-text">
-              hobbies/interests (main) $
-            </span>
-            <code className="whitespace-pre-line grid grid-cols-2 ">
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["🎥 movies"]} speed={50} />
-              </span>
-              <span className="transform transition-transform duration-500 whitespace-nowrap hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["📻 classic music"]} speed={50} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["📖 reading"]} speed={50} />
-              </span>
-            </code>
-          </pre>
+        {/* منطقة عرض المحتوى مع تأثير الانتقال */}
+        <div className="relative min-h-[350px] flex items-center justify-center">
+          {renderTabContent()}
         </div>
       </div>
     </div>
   );
 };
 
-export default Card;
+export default ModernTabsCard;
