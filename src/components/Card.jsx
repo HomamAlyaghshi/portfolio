@@ -70,6 +70,9 @@ const Card = () => {
                 <TypeAnimation sequence={["React.js"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
+                <TypeAnimation sequence={["Next.js"]} speed={500} />
+              </span>
+              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
                 <TypeAnimation sequence={["MaterialUI"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
@@ -80,9 +83,6 @@ const Card = () => {
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
                 <TypeAnimation sequence={["Nuxt.js"]} speed={500} />
-              </span>
-              <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
-                <TypeAnimation sequence={["Bootstrap"]} speed={500} />
               </span>
               <span className="transform transition-transform duration-500 hover:translate-y-[-5px]">
                 <TypeAnimation sequence={["Tailwind"]} speed={500} />
