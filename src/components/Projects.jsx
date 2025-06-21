@@ -115,6 +115,7 @@ const Projects = () => {
             tags: ["React", "TailwindCSS"],
             completed: true,
         },
+        
     ]);
 
     const cardHoverVariant = {
