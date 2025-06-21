@@ -39,7 +39,7 @@ const HeroSections = () => {
             <a href="/projectspage" className="btn btn-primary w-full sm:w-auto rounded-md">
               View My Projects
             </a>
-            <a href="/Homam_Alyaghshi_React_CV.pdf" download className="btn btn-outline w-full sm:w-auto rounded-md">
+            <a href="/Homam_Alyaghshi_CV.pdf" download className="btn btn-outline w-full sm:w-auto rounded-md">
               <FaFileDownload className="mr-2"/>
               Download CV
             </a>
