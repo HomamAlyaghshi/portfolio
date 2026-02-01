@@ -348,7 +348,7 @@ const Projects = () => {
                     {project.tags.slice(0, 6).map((tag) => (
                       <button
                         key={tag}
-                        className="badge badge-outline hover:badge-primary transition cursor-pointer"
+                        className="badge badge-outline hover:text-primary transition cursor-pointer"
                         onClick={() => setTechFilter(tag)}
                         title="Filter by this tech"
                       >
