@@ -4,12 +4,15 @@ import HeroSections from "../components/HeroSections";
 import SocialMedia from "../components/SocialMedia";
 import Footer from "../shared/Footer";
 import Appbar from "../shared/Appbar";
+
 const HomePage = () => {
   return (
-    <div className="h-full ">
+    <div className="h-full min-h-screen bg-base-100">
       <Appbar />
-      <HeroSections />
-      <SocialMedia />
+      <main className="relative">
+        <HeroSections />
+        <SocialMedia />
+      </main>
       <Footer />
     </div>
   );

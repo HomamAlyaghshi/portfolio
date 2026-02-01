@@ -15,16 +15,19 @@
   ); /* تدرج ألوان عصري وحيوي */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   background-size: 200% 200%;
   animation: gradient-animation 6s ease infinite; /* حركة أبطأ وأكثر سلاسة */
   display: inline-block; /* ضروري لتطبيق الـ gradient بشكل صحيح */
 }
+
 .waving-hand {
     display: inline-block;
     font-size: 3rem;
     animation: wave 1s infinite;
     will-change: transform; /* Inform the browser about the upcoming changes */
 }
+
 @keyframes wave {
     0%, 100% {
         transform: rotate(0deg);
@@ -32,6 +35,45 @@
     50% {
         transform: rotate(15deg); /* تحريك الإيموجي لليمين */
     }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--b2));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--p));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--pf));
+}
+
+/* Fade in animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.5s ease-out;
 }
 
 

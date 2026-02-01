@@ -1,6 +1,8 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, X, Search } from "lucide-react";
+import { projectsData } from "../data/projectsData";
+import { useProjectsFilter } from "../hooks/useProjectsFilter";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -8,149 +10,12 @@ const Projects = () => {
   const [techFilter, setTechFilter] = useState("all");
   const [query, setQuery] = useState("");
 
-  const projects = useMemo(
-    () => [
-      {
-        name: "First Project",
-        image: "/images/project1.png",
-        liveUrl: "https://p1-mauve.vercel.app/",
-        sourceUrl: "https://gitlab.com/homamalyaghshi/e-commerce",
-        description:
-          "An e-commerce project built with React, offering product browse and a modern responsive UI.",
-        tags: ["React", "TailwindCSS"],
-        completed: true,
-      },
-      {
-        name: "Furnishify E-commerce",
-        image: "/images/project2.png",
-        liveUrl: "https://project3-murex-mu.vercel.app/",
-        sourceUrl: "https://gitlab.com/homamalyaghshi/project3",
-        description:
-          "A full-stack e-commerce platform for furniture with a clean UI and robust features: catalog, auth, cart.",
-        tags: ["React", "TailwindCSS", "Redux"],
-        completed: true,
-      },
-      {
-        name: "Foodisphere",
-        image: "/images/project3.png",
-        liveUrl: "https://foodisphere.vercel.app/",
-        sourceUrl: "https://gitlab.com/homamalyaghshi/Foodisphere",
-        description:
-          "Recipe discovery app to find and save dishes via external API with a smooth UI.",
-        tags: ["React", "TailwindCSS", "API", "MUI"],
-        completed: true,
-      },
-      {
-        name: "Portfolio",
-        image: "/images/project4.png",
-        liveUrl: "https://portfolio-dusky-sigma-50.vercel.app/",
-        sourceUrl: "#",
-        description:
-          "Personal portfolio showcasing projects and skills using modern design and smooth interactions.",
-        tags: ["React", "TailwindCSS"],
-        completed: true,
-      },
-      {
-        name: "Recipes",
-        image: "/images/project5.png",
-        liveUrl: "https://first-nuxt-project-ivory.vercel.app/",
-        sourceUrl: "https://gitlab.com/homamalyaghshi/first-nu-project",
-        description:
-          "Simple Nuxt.js recipe website featuring category filtering and detailed recipe pages.",
-        tags: ["Nuxt.js", "Vuex", "TailwindCSS"],
-        completed: true,
-      },
-      {
-        name: "Hotel Dashboard",
-        image: "/images/project8.png",
-        liveUrl: "https://hotel-dashboard-peach.vercel.app/",
-        sourceUrl: "#",
-        description:
-          "Admin panel for managing hotel bookings and rooms with reports and charts.",
-        tags: ["React", "TailwindCSS", "Zustand"],
-        completed: true,
-      },
-      {
-        name: "My Graduation Project",
-        image: "/images/project6.png",
-        liveUrl: "https://my-graduation-project-one.vercel.app/",
-        sourceUrl: "#",
-        description:
-          "University graduation project under development aiming to solve a real-world problem.",
-        tags: ["React", "TailwindCSS", "API", "MongoDB", "Node"],
-        completed: true,
-      },
-      {
-        name: "tamayoz LMS",
-        image: "/images/project7.png",
-        liveUrl: "#",
-        sourceUrl: "#",
-        description:
-          "Feature-rich Learning Management System under development for an educational platform.",
-        tags: ["Nuxt.js", "Vuex", "Vuetify"],
-        completed: false,
-      },
-      {
-        name: "Alemad Charity",
-        image: "/images/project9.png",
-        liveUrl: "https://alemadcharity.org/",
-        sourceUrl: "#",
-        description:
-          "Official website for Alemad Charity, showcasing initiatives, projects, and donation opportunities.",
-        tags: ["HTML", "CSS", "JavaScript"],
-        completed: true,
-      },
-      {
-        name: "What to Read",
-        image: "/images/project12.png",
-        liveUrl: "https://what-to-read-two.vercel.app/",
-        sourceUrl: "#",
-        description:
-          "Book recommendations platform that helps users find books based on interests, mood, and reading time.",
-        tags: ["React", "TailwindCSS", "Google Books API"],
-        completed: true,
-      },
-      {
-        name: "Clinic Dashboard",
-        image: "/images/project10.png",
-        liveUrl: "https://clinic-management-system-sehu.vercel.app/",
-        sourceUrl: "#",
-        description:
-          "Clinic management dashboard for appointments, patients, and reports using React Context API.",
-        tags: ["React", "TailwindCSS", "Context API"],
-        completed: true,
-      },
-      {
-        name: "Dashboard",
-        image: "/images/project11.png",
-        liveUrl: "https://dashboard-lovat-beta.vercel.app/",
-        sourceUrl: "#",
-        description:
-          "Dashboard template with clean design and UI components for management systems.",
-        tags: ["React", "TailwindCSS"],
-        completed: true,
-      },
-      {
-        name: "Task Manager",
-        image: "/images/project13.png",
-        liveUrl: "https://task-manager-beta-eight-17.vercel.app/",
-        sourceUrl: "https://github.com/HomamAlyaghshi/Task-Manager",
-        description:
-          "Task manager built with Next.js and Redux Toolkit, feature-based structure and clean UI.",
-        tags: ["Next.js", "Redux Toolkit", "TailwindCSS"],
-        completed: true,
-      },
-      {
-        name: "BUNAT",
-        image: "/images/project14.png",
-        liveUrl: "https://bunat.moad.gov.sy/",
-        sourceUrl: "#",
-        description: "BUNAT – official governmental platform for building permits and administrative services, providing citizens with access to construction-related procedures and document submission.",
-        tags: ["Government", "Public Service", "Web Platform"],
-        completed: true,
-    },
-    ],
-    []
+  // Use custom hook for filtering logic
+  const { allTags, filtered, stats } = useProjectsFilter(
+    projectsData,
+    statusFilter,
+    techFilter,
+    query
   );
 
   // ESC to close modal
@@ -162,33 +27,6 @@ const Projects = () => {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  const allTags = useMemo(() => {
-    const set = new Set();
-    projects.forEach((p) => p.tags.forEach((t) => set.add(t)));
-    return ["all", ...Array.from(set).sort((a, b) => a.localeCompare(b))];
-  }, [projects]);
-
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-
-    return projects.filter((p) => {
-      const statusOk =
-        statusFilter === "all" ||
-        (statusFilter === "completed" && p.completed) ||
-        (statusFilter === "inprogress" && !p.completed);
-
-      const techOk = techFilter === "all" || p.tags.includes(techFilter);
-
-      const queryOk =
-        !q ||
-        p.name.toLowerCase().includes(q) ||
-        p.description.toLowerCase().includes(q) ||
-        p.tags.some((t) => t.toLowerCase().includes(q));
-
-      return statusOk && techOk && queryOk;
-    });
-  }, [projects, statusFilter, techFilter, query]);
-
   const cardVariants = {
     hidden: { opacity: 0, y: 10 },
     show: { opacity: 1, y: 0 },
@@ -197,9 +35,15 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-16 sm:py-20 px-4 sm:px-10 bg-base-100 text-base-content"
+      className="py-16 sm:py-20 px-4 sm:px-10 bg-base-100 text-base-content relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="flex flex-col gap-4 sm:gap-5 mb-10">
           <div className="flex items-end justify-between gap-4 flex-wrap">
@@ -215,19 +59,15 @@ const Projects = () => {
             <div className="stats shadow bg-base-200 border border-base-300">
               <div className="stat py-3">
                 <div className="stat-title text-base-content/70">Total</div>
-                <div className="stat-value text-2xl">{projects.length}</div>
+                <div className="stat-value text-2xl">{stats.total}</div>
               </div>
               <div className="stat py-3">
                 <div className="stat-title text-base-content/70">Completed</div>
-                <div className="stat-value text-2xl">
-                  {projects.filter((p) => p.completed).length}
-                </div>
+                <div className="stat-value text-2xl">{stats.completed}</div>
               </div>
               <div className="stat py-3">
                 <div className="stat-title text-base-content/70">In Progress</div>
-                <div className="stat-value text-2xl">
-                  {projects.filter((p) => !p.completed).length}
-                </div>
+                <div className="stat-value text-2xl">{stats.inProgress}</div>
               </div>
             </div>
           </div>
