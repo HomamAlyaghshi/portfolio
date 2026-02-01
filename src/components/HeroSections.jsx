@@ -66,7 +66,7 @@ const HeroSections = () => {
             <div className="absolute inset-0 bg-primary rounded-full blur-2xl opacity-40"></div>
             <img
             alt="صورة شخصية لهمام"
-            src="/images/withoutback.png"
+            src="/images/homam.jpg"
               className="relative w-full h-full object-cover bg-mycolor rounded-full shadow-2xl transition-transform duration-300 hover:scale-105"
             />
           </div>
