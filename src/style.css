@@ -1,0 +1,41 @@
+/* style.css */
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    45deg,
+    #8e2de2, /* بنفسجي زاهي */
+    #4a00e0, /* أزرق بنفسجي داكن */
+    #00c6ff, /* أزرق فاتح */
+    #0072ff    /* أزرق نيون */
+  ); /* تدرج ألوان عصري وحيوي */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-animation 6s ease infinite; /* حركة أبطأ وأكثر سلاسة */
+  display: inline-block; /* ضروري لتطبيق الـ gradient بشكل صحيح */
+}
+.waving-hand {
+    display: inline-block;
+    font-size: 3rem;
+    animation: wave 1s infinite;
+    will-change: transform; /* Inform the browser about the upcoming changes */
+}
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(15deg); /* تحريك الإيموجي لليمين */
+    }
+}
+
+
+
+
+  
+ 
