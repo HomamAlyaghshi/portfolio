@@ -140,6 +140,15 @@ const Projects = () => {
         tags: ["Next.js", "Redux Toolkit", "TailwindCSS"],
         completed: true,
       },
+      {
+        name: "BUNAT",
+        image: "/images/project14.png",
+        liveUrl: "https://bunat.moad.gov.sy/",
+        sourceUrl: "#",
+        description: "BUNAT – official governmental platform for building permits and administrative services, providing citizens with access to construction-related procedures and document submission.",
+        tags: ["Government", "Public Service", "Web Platform"],
+        completed: true,
+    },
     ],
     []
   );
