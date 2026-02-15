@@ -138,4 +138,13 @@ export const projectsData = [
     tags: ["Government", "Public Service", "Web Platform"],
     completed: true,
   },
+   {
+    name: "Yalla Breakfast",
+    image: "/images/project15.png",
+    liveUrl: "https://employee-food-accounting.vercel.app/",
+    description:
+      "Bilingual (Arabic/English) web app to manage shared employee food orders with automatic delivery fee splitting, order tracking, analytics, and local data management.",
+    tags: ["React", "JavaScript", "LocalStorage", "i18n", "Analytics"],
+    completed: true,
+  },
 ];
