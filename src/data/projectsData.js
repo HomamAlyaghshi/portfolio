@@ -147,4 +147,15 @@ export const projectsData = [
     tags: ["React", "JavaScript", "LocalStorage", "i18n", "Analytics"],
     completed: true,
   },
+  {
+  name: "AI Resume Optimizer",
+  image: "/images/project16.png",
+  liveUrl: "https://ai-resume-optimizer-vert.vercel.app/",
+  sourceUrl: "https://github.com/HomamAlyaghshi/AI-Resume-Optimizer",
+  description:
+    "AI-powered resume optimization tool that analyzes a resume against a job description and generates an ATS score, missing keywords, tailored headline & summary, and improved bullet points using Ollama.",
+  tags: ["Next.js", "TypeScript", "Ollama", "AI", "LLM"],
+  completed: true,
+},
+
 ];
